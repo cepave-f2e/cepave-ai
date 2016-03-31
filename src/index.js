@@ -24,6 +24,6 @@ server
   .use(bodyParser.json())
   .use(bodyParser.urlencoded({ extended: false }))
   .use('/webhook', hookRouter)
-  .listen(7777, ()=> {
-    console.log('Cepave AI server was listening on port 7777')
+  .listen(17777, ()=> {
+    console.log('Cepave AI server was listening on port 17777')
   })
