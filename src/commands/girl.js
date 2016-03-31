@@ -12,6 +12,6 @@ module.exports = (msg, match) =>{
       const data = JSON.parse(res.body).tngou
       const imgurl = data[util.random(0, data.length -1)].img
 
-      ai.sendMessage(chatId, `http://tnfs.tngou.net/img${imgurl}`)
+      ai.sendMessage(chatId, `http://tnfs.tngou.net/image${imgurl}_200.jpg`)
     })
 }
