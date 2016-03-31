@@ -12,7 +12,7 @@ hookRouter.post('/cepaveai', (req, res)=> {
   try {
     const userName = req.body.user_name
     const userEmail = req.body.user_email
-    const lastCommit = req.commits.slice(-1)[0]
+    const lastCommit = req.body.commits.slice(-1)[0]
     const lastCommitHash = lastCommit.id
     const lastCommitMessage = lastCommit.message
     const lastCommitUrl = lastCommit.url
