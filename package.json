@@ -8,6 +8,8 @@
   "author": "Rocky Wu <rwu@cepave.com>",
   "license": "MIT",
   "dependencies": {
+    "body-parser": "^1.15.0",
+    "express": "^4.13.4",
     "got": "^6.2.0",
     "node-telegram-bot-api": "^0.21.1"
   },
