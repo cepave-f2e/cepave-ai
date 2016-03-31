@@ -24,7 +24,7 @@ ${lastCommitUrl}
   //  send to Cepave Tech
     ai.sendMessage(-10613384, msg)
   } catch (er) {
-
+    console.log(er)
   }
 
   res.send(req.body)
