@@ -16,8 +16,8 @@ hookRouter.post('/cepaveai', (req, res)=> {
     const lastCommitHash = lastCommit.id
     const lastCommitMessage = lastCommit.message
     const lastCommitUrl = lastCommit.url
-
     const msg = `${userName} <${userEmail}>
+branch: ${req.body.ref}
 ${lastCommitMessage}
 ${lastCommitUrl}
     `
