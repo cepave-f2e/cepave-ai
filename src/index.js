@@ -12,8 +12,10 @@ const bodyParser = require('body-parser')
 
 ;`@commands
 gif - [-r (random)] query a gif image from GIPHY
+girl - get random beauty girl photo
 `
 ai.onText(/^\/gif (.+)/,  require('./commands/gif'))
+ai.onText(/^\/girl (.+)/,  require('./commands/girl'))
 ai.on('message', (msg)=> {
   console.log(msg)
 })
