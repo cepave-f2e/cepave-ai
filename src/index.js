@@ -15,7 +15,8 @@ gif - [-r (random)] query a gif image from GIPHY
 girl - get random beauty girl photo
 `
 ai.onText(/^\/gif (.+)/,  require('./commands/gif'))
-ai.onText(/^\/girl$/,  require('./commands/girl'))
+ai.onText(/^\/girl/,  require('./commands/girl'))
+ai.onText(/^\/status (.+)/,  require('./commands/status'))
 ai.on('message', (msg)=> {
   console.log(msg)
 })
@@ -29,3 +30,8 @@ server
   .listen(17777, ()=> {
     console.log('Cepave AI server was listening on port 17777')
   })
+
+
+const getAppleNews = require('./apple-news')
+
+getAppleNews(7, [-113258008])
