@@ -47,7 +47,7 @@ http://www.appledaily.com.tw${link}
 const getAppleNewsPolling = (minutes, chatIDs)=> {
   getAppleNews(chatIDs)
   setTimeout(()=> {
-    getAppleNewsPolling(minutes)
+    getAppleNewsPolling(minutes, chatIDs)
   }, minutes * 1000 * 60)
 }
 
