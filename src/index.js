@@ -13,8 +13,10 @@ const bodyParser = require('body-parser')
 ;`@commands
 gif - [-r (random)] query a gif image from GIPHY
 girl - get random beauty girl photo
+news - get latest Apple News 
 `
 ai.onText(/^\/gif (.+)/,  require('./commands/gif'))
+ai.onText(/^\/news/,  require('./commands/news'))
 ai.onText(/^\/girl/,  require('./commands/girl'))
 ai.on('message', (msg)=> {
   console.log(msg)
@@ -29,8 +31,3 @@ server
   .listen(17777, ()=> {
     console.log('Cepave AI server was listening on port 17777')
   })
-
-
-const getAppleNews = require('./apple-news')
-
-getAppleNews(7, [-113258008])
