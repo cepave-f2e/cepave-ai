@@ -14,6 +14,7 @@ const bodyParser = require('body-parser')
 gif - [-r (random)] query a gif image from GIPHY
 girl - get random beauty girl photo
 news - get latest Apple News 
+status - get web site status 
 `
 ai.onText(/^\/gif (.+)/,  require('./commands/gif'))
 ai.onText(/^\/news/,  require('./commands/news'))
