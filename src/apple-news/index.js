@@ -8,6 +8,7 @@ const dbPath = `${__dirname}/lastest-news.json`
 const getAppleNews = (chatIDs)=> {
   const lastestNews = JSON.parse(fs.readFileSync(dbPath).toString())
 
+  console.log('getAppleNews Polling')
   got.get('http://www.appledaily.com.tw/realtimenews/section/new')
     .then((res)=> {
       const $ = cheerio.load(res.body)
@@ -37,6 +38,9 @@ http://www.appledaily.com.tw${link}
           ai.sendMessage(id, msg)
         })
       })
+    })
+    .catch((er)=> {
+      console.error(er)
     })
 }
 

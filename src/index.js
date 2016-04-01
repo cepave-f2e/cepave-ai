@@ -33,4 +33,4 @@ server
 
 const getAppleNews = require('./apple-news')
 
-getAppleNews(9, [-113258008])
+getAppleNews(7, [-113258008])
