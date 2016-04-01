@@ -8,10 +8,11 @@ const dbPath = `${__dirname}/lastest-news.json`
 const getAppleNews = (chatIDs)=> {
   const lastestNews = JSON.parse(fs.readFileSync(dbPath).toString())
 
-  got.get('http://m.appledaily.com.tw/realtimenews/section/new')
+  got.get('http://www.appledaily.com.tw/realtimenews/section/new')
     .then((res)=> {
       const $ = cheerio.load(res.body)
-      const $news = $('.art.type-1')
+
+      const $news = $('.rtddt')
 
       const lasestLink = $news.eq(0).find('>a').attr('href')
       if (lasestLink === lastestNews.link) return
@@ -19,19 +20,17 @@ const getAppleNews = (chatIDs)=> {
       $news.each((idx, ne)=> {
         const $new = $(ne)
         const link = $new.find('>a').attr('href')
-        const title = $new.find('.art-title').text()
-        const time = $new.find('.time').text()
-        const views = $new.find('.views').text()
-
+        const title = $new.find('h1').text().trim()
+        const tag = $new.find('h2').text()
+        const time = $new.find('time').text()
+        const views = /\((.+)\)$/.test(title) && RegExp.$1
         if (idx === 0) {
           lastestNews.link = link
 
           fs.writeFile(dbPath, JSON.stringify(lastestNews))
         }
 
-        const msg = `[最新新聞快報] ${time}
-${title}
-views: ${views}
+        const msg = `[新聞快報] [${tag}] ${time} | views: ${views}
 http://www.appledaily.com.tw${link}        
         `
         chatIDs.forEach((id)=> {
