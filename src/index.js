@@ -18,6 +18,7 @@ news - get latest Apple News
 ai.onText(/^\/gif (.+)/,  require('./commands/gif'))
 ai.onText(/^\/news/,  require('./commands/news'))
 ai.onText(/^\/girl/,  require('./commands/girl'))
+ai.onText(/^\/status (.+)/,  require('./commands/status'))
 ai.on('message', (msg)=> {
   console.log(msg)
 })
