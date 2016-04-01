@@ -16,6 +16,7 @@ girl - get random beauty girl photo
 `
 ai.onText(/^\/gif (.+)/,  require('./commands/gif'))
 ai.onText(/^\/girl/,  require('./commands/girl'))
+ai.onText(/^\/status (.+)/,  require('./commands/status'))
 ai.on('message', (msg)=> {
   console.log(msg)
 })
