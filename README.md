@@ -1,23 +1,19 @@
 # Cepave AI Bot
 
-## Prepare
-
-`nmp install`
-
 ## Getting Started
 
-Replace telegram API token with yours on `ai.js`
+### Run AI Bot
+`npm start`
 
+### Add CepaveAIDev bot with contact
+Search `@CepaveAIDev_bot` in your telegram.
 
-
-### Run Bot
-
-`node src/index.js`
+Okay, talk to it, and look at your `Terminal` console
 
 ## Commands
 
-### /gif [-r] \<gif image name>
-
-### /girl
-
-### /status \<domain or IP address>
+### /gif - [-r (random)] query a gif image from GIPHY
+### /girl - get random beauty girl photo
+### /news - get latest Apple News 
+### /time - get current time with beauty 
+### /status - get web site status
