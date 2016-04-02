@@ -20,7 +20,7 @@ module.exports = (msg, match) =>{
         let imgurl = data[0].images.fixed_height.url
 
         if (isRandom) {
-          imgurl = data[util.random(0, data.length -1)].images.fixed_height.url
+          imgurl = util.randomArray(data).images.fixed_height.url
         }
 
         ai.sendMessage(chatId, `${q}\n${imgurl}`)
