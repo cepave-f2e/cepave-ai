@@ -4,7 +4,7 @@
   "description": "Cepave AI Bot",
   "main": "src/index.js",
   "scripts": {
-    "start": "node src"
+    "start": "node ./dev"
   },
   "keywords": [],
   "author": "Rocky Wu <rwu@cepave.com>",
@@ -17,5 +17,7 @@
     "moment": "^2.12.0",
     "node-telegram-bot-api": "^0.21.1"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "piping": "^0.3.0"
+  }
 }
