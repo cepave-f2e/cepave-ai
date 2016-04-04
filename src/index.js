@@ -14,6 +14,7 @@ ai.onText(/^\/news/,  require('./commands/news'))
 ai.onText(/^\/girl/,  require('./commands/girl'))
 ai.onText(/^\/time/,  require('./commands/time'))
 ai.onText(/^\/status (.+)/,  require('./commands/status'))
+ai.onText(/^\/\$/,  require('./commands/money'))
 ai.on('message', (msg)=> {
   console.log(msg)
 })
