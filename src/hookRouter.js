@@ -21,8 +21,10 @@ branch: ${req.body.ref}
 ${lastCommitMessage}
 ${lastCommitUrl}
     `
-  //  send to Cepave Tech
-    ai.sendMessage(-10613384, msg)
+  //  send to Cepave Tech Notification
+    ai.sendMessage(-113225113, msg, {
+      disable_web_page_preview: true
+    })
   } catch (er) {
     console.log(er)
   }
