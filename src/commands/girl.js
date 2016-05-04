@@ -45,8 +45,25 @@ module.exports = (msg, match) => {
 
           ai.sendMessage(chatId, imgURL)
         })
+    },
+    function cuteJpTumblr() {
+      got.get('http://cu-te-jp.tumblr.com/')
+        .then((res) => {
+          const $ = cheerio.load(res.body)
+          const totalPages = $('.page-info').text().split(' ').pop()
+          const randomPage = random(1, totalPages)
+
+          got.get(`http://cu-te-jp.tumblr.com/page/${randomPage}`)
+            .then((res) => {
+              const $ = cheerio.load(res.body)
+              const randomImage = random(0, $('.photo-post-photo').length - 1)
+              const imgURL = $('.photo-post-photo').eq(randomImage).attr('data-retina')
+
+              ai.sendMessage(chatId, imgURL)
+            })
+        })
     }
   ]
 
-  girl[random(0,1)]()
+  girl[random(0,2)]()
 }
