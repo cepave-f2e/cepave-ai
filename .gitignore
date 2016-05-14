@@ -8,3 +8,5 @@ coverage
 
 # Logs
 npm-debug.log*
+
+*.db

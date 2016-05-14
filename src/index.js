@@ -9,6 +9,7 @@ const server = express()
 const ai = require('./ai')
 const bodyParser = require('body-parser')
 
+ai.onText(/^\/duty/,  require('./commands/duty'))
 ai.onText(/^\/gif (.+)/,  require('./commands/gif'))
 ai.onText(/^\/news/,  require('./commands/news'))
 ai.onText(/^\/girl/,  require('./commands/girl'))

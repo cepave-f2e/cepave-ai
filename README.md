@@ -15,4 +15,5 @@ Okay, talk to it, and look at your `Terminal` console
 - `news` - get latest Apple News 
 - `time` - get current time with beauty 
 - `status` - get web site status
+- `duty` - get daily duty
 - `$` - An exchange rate of currency
