@@ -15,6 +15,8 @@ ai.onText(/^\/news/,  require('./commands/news'))
 ai.onText(/^\/girl/,  require('./commands/girl'))
 ai.onText(/^\/time/,  require('./commands/time'))
 ai.onText(/^\/status (.+)/,  require('./commands/status'))
+ai.onText(/^\/freeze (set) (.+)/, require('./commands/freeze'))
+ai.onText(/^\/freeze (get)/, require('./commands/freeze'))
 ai.onText(/^\/\$/,  require('./commands/money'))
 ai.on('message', (msg)=> {
   console.log(msg)
