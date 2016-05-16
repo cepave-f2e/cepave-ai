@@ -12,7 +12,7 @@ module.exports = ()=> {
   const nowHours = now.hours()
   const nowMinutes = now.minutes()
 
-  let to430 = moment()
+  let to430 = getNow()
   if (nowHours < 16 || (nowHours === 16 && nowMinutes <= 30)){
     return setTo430(to430)
   } else {
