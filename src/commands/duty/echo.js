@@ -11,18 +11,18 @@ module.exports = (chatId, hasUpdateDB)=> {
   const now = getNow()
   const days = now.days()
   if (days === 6) {
-    ai.sendMessage(chatId, `親，今天是星期六，不需要值日生`)
+    ai.sendMessage(chatId, `親，今天是星期六，不需要值日生 (testing)`)
   } else if (days === 0) {
-    ai.sendMessage(chatId, `親，今天是星期日，不需要值日生`)
+    ai.sendMessage(chatId, `親，今天是星期日，不需要值日生 (testing)`)
   } else if (holiday2016[now.format('MMDD')]) {
-    ai.sendMessage(chatId, `親，今天是${holiday2016[now.format('MMDD')]}節日，不需要值日生`)
+    ai.sendMessage(chatId, `親，今天是${holiday2016[now.format('MMDD')]}節日，不需要值日生 (testing)`)
   } else {
     db.findOne({}, (er, doc)=> {
       const dutyID = doc.dutyID
       const nextDutyID = dutyID + 1
       const who = personList[dutyID]
 
-      let msg = `🎯 今天的值日生是: ${who.name} (${who.en})\n`
+      let msg = `🎯 今天的值日生是: ${who.name} (${who.en})(testing)\n`
       if (days === 3) msg += `親，今天是星期三，垃圾整理一下先放在廚房即可`
 
       ai.sendMessage(chatId, msg)
