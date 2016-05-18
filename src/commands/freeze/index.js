@@ -17,7 +17,6 @@ module.exports = (msg, args)=> {
   } else if (args[1] === 'get') {
 
     db.findOne({}, (er, doc)=> {
-      db.update(doc, {codeFreezeDay: args[2]})
       ai.sendMessage(chatId, `Code freeze ${moment(doc.codeFreezeDay, "YYYYMMDD").fromNow()}`)
     })
 
