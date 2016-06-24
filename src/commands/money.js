@@ -6,7 +6,7 @@ const cheerio = require('cheerio')
 module.exports = (msg, match) => {
   const fromId = msg.from.id
   const chatId = msg.chat.id
-  const inputCurrency = msg.text.split(' ').pop()
+  const inputCurrency = msg.text.split(' ').pop().toUpperCase()
   const EMOJI_MOMENY_BAG = '\u{1F4B0}'
   const EMOJI_INFO = '\u{2139}'
   const bankCode = 'TSIBTWTP'
