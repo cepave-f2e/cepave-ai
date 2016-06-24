@@ -59,4 +59,8 @@ module.exports = {
     name: '陳韻如',
     en: 'Birdie'
   },
+  16: {
+    name: '蘇筱晴',
+    en: 'Kelly'
+  }
 }
